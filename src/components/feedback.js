@@ -6,7 +6,7 @@ export function createFeedback() {
   // Floating Action Button
   const fab = createElement('button', {
     className: 'feedback-fab',
-    innerHTML: '💬',
+    innerHTML: '&#128172;', // Speech balloon
     title: 'Deixe seu feedback',
   });
 
@@ -18,7 +18,7 @@ export function createFeedback() {
 
   const closeBtn = createElement('button', {
     className: 'feedback-close',
-    innerHTML: '×',
+    innerHTML: '&times;',
   });
 
   // Form Section

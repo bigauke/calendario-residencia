@@ -18,7 +18,7 @@ function mount() {
   app.appendChild(createTimeline());
   app.appendChild(createClassList());
   app.appendChild(createFooter());
-  app.appendChild(createFeedback());
+  document.body.appendChild(createFeedback());
 
   // Global intersection observer for fade-up animations
   const fadeObserver = new IntersectionObserver(
