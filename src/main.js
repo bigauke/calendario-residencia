@@ -6,6 +6,7 @@ import { createTimeline } from './components/timeline.js';
 import { createClassList } from './components/classList.js';
 import { createFooter } from './components/footer.js';
 import { createFeedback } from './components/feedback.js';
+import { createScrollTop } from './components/scrollTop.js';
 
 // Mount the application
 function mount() {
@@ -19,6 +20,7 @@ function mount() {
   app.appendChild(createClassList());
   app.appendChild(createFooter());
   document.body.appendChild(createFeedback());
+  document.body.appendChild(createScrollTop());
 
   // Global intersection observer for fade-up animations
   const fadeObserver = new IntersectionObserver(
