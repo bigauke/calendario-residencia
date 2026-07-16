@@ -36,12 +36,12 @@ export function createFeedback() {
 
   // Rating Stars
   const starsContainer = createElement('div', { className: 'feedback-stars' });
-  let currentRating = 5;
+  let currentRating = 0;
   const stars = [];
 
   for (let i = 1; i <= 5; i++) {
     const star = createElement('span', {
-      className: 'feedback-star active',
+      className: 'feedback-star',
       innerHTML: '★',
     });
     star.dataset.value = i;
@@ -135,8 +135,8 @@ export function createFeedback() {
       form.reset();
       formSection.style.display = 'block';
       successSection.classList.remove('active');
-      currentRating = 5;
-      stars.forEach(s => s.classList.add('active'));
+      currentRating = 0;
+      stars.forEach(s => s.classList.remove('active'));
     }, 300);
   };
 
@@ -152,6 +152,12 @@ export function createFeedback() {
   // Handle Form Submission
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
+    if (currentRating === 0) {
+      alert('Por favor, selecione uma nota de 1 a 5 estrelas.');
+      return;
+    }
+    
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
 
