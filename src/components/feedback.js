@@ -29,7 +29,7 @@ export function createFeedback() {
   });
   const desc = createElement('p', {
     className: 'feedback-desc',
-    textContent: 'Como está sendo a sua experiência na Residência? Sugestões para o site?',
+    textContent: 'Como está sendo a sua experiência com o calendário? Deixe suas sugestões para o site!',
   });
 
   const form = createElement('form', { className: 'feedback-form' });
