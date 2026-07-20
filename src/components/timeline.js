@@ -63,6 +63,14 @@ export function createTimeline() {
         textContent: formatDate(aula.date),
       }));
 
+      if (aula.instructor) {
+        left.appendChild(createElement('span', {
+          className: 'timeline-item-instructor',
+          textContent: `👨‍🏫 ${aula.instructor}`,
+          style: { display: 'block', marginTop: '4px', fontSize: '0.85rem', color: 'var(--text-secondary)' }
+        }));
+      }
+
       content.appendChild(left);
 
       if (aula.materialUrl) {

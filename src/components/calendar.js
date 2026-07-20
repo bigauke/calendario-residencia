@@ -204,6 +204,14 @@ export function createCalendar() {
         textContent: formatDate(aula.date),
       }));
 
+      if (aula.instructor) {
+        info.appendChild(createElement('span', {
+          className: 'calendar-detail-instructor',
+          textContent: `👨‍🏫 ${aula.instructor}`,
+          style: { display: 'block', marginTop: '6px', fontSize: '0.9rem', color: 'var(--text-secondary)' }
+        }));
+      }
+
       card.appendChild(info);
 
       if (aula.materialUrl) {

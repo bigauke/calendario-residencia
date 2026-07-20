@@ -156,6 +156,14 @@ export function createClassList() {
         innerHTML: `${statusEmoji} ${formatDate(aula.date)}`,
       }));
 
+      if (aula.instructor) {
+        card.appendChild(createElement('div', {
+          className: 'class-card-instructor',
+          innerHTML: `👨‍🏫 ${aula.instructor}`,
+          style: { marginTop: '8px', fontSize: '0.85rem', color: 'var(--text-secondary)' }
+        }));
+      }
+
       // Footer
       const footer = createElement('div', { className: 'class-card-footer' });
 
