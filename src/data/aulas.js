@@ -104,7 +104,7 @@ export const aulas = [
   { number: 34, title: 'Engenharia de Dados e Data Lakes', instructor: 'Pedro Mesquita Moura',
     workload: 12, date: new Date('2026-07-22T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/35-%20Engenharia%20de%20Dados%20e%20Data%20Lakes?csf=1&web=1&e=boVmgw' },
   { number: 35, title: 'Power BI do Zero', instructor: 'Caroliny Rodrigues Nascimento',
-    workload: 20, date: new Date('2026-07-24T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/36-%20Power%20BI%20do%20Zero?csf=1&web=1&e=bC8Ky0' },
+    workload: 20, date: new Date('2026-07-24T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/34-%20Power%20BI%20do%20Zero?csf=1&web=1&e=9MjZI7' },
   { number: 36, title: 'Processamento de Big Data com Spark',
     workload: 6, date: new Date('2026-07-30T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/33-%20Processamento%20big%20data%20com%20SPARK?csf=1&web=1&e=jwkitZ' },
   { number: 37, title: 'Banco de Dados Relacionais e SQL',
