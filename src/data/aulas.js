@@ -108,7 +108,7 @@ export const aulas = [
   { number: 36, title: 'Processamento de Big Data com Spark',
     workload: 6, date: new Date('2026-08-03T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/33-%20Processamento%20big%20data%20com%20SPARK?csf=1&web=1&e=jwkitZ' },
   { number: 37, title: 'Banco de Dados Relacionais e SQL', instructor: 'Adnan Tavares Anholetto & Otávio Augusto Souza Rosa',
-    workload: 18, date: new Date('2026-07-29T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/34-%20Banco%20de%20Dados%20relacionais%20e%20SQL?csf=1&web=1&e=xRtdrA' },
+    workload: 18, date: new Date('2026-07-29T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/35-%20Banco%20de%20Dados%20relacionais%20e%20SQL?csf=1&web=1&e=LNmheV' },
   { number: 38, title: 'Processamento de Big Data com DASK',
     workload: 6, date: new Date('2026-08-07T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/37-%20Processamento%20big%20Data%20com%20DASK?csf=1&web=1&e=7UatdU' },
   { number: 39, title: 'Bancos de Dados Não Relacionais - NoSQL',
