@@ -3,6 +3,7 @@ import {
   getNextClass,
   getProgress,
   getCountdown,
+  expandAulas,
   formatDate,
   createElement,
 } from '../utils.js';
@@ -128,10 +129,11 @@ export function createHero() {
   // Progress stats
   const stats = createElement('div', { className: 'progress-stats' });
   const totalHours = aulas.reduce((acc, aula) => acc + (aula.workload || 0), 0);
+  const totalDays = expandAulas(aulas).length;
   const statsData = [
-    { color: '#10b981', value: progress.completed, label: 'Aulas concluídas' },
-    { color: 'var(--accent)', value: progress.total - progress.completed, label: 'Aulas restantes' },
-    { color: '#8b5cf6', value: `${progress.total} (${totalHours}h)`, label: 'Total de aulas' },
+    { color: '#10b981', value: progress.completed, label: 'Módulos concluídos' },
+    { color: 'var(--accent)', value: progress.total - progress.completed, label: 'Módulos restantes' },
+    { color: '#8b5cf6', value: `${progress.total} (${totalHours}h)`, label: `Total de módulos (${totalDays} dias)` },
   ];
 
   statsData.forEach(({ color, value, label }) => {
