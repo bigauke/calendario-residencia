@@ -446,10 +446,16 @@ img {
 
 .navbar.scrolled {
   padding: var(--space-sm) var(--space-xl);
-  background: rgba(6, 8, 15, 0.85);
+  background: rgba(6, 8, 15, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
+}
+
+/* Navbar scrolled — tema claro */
+html.light-mode .navbar.scrolled {
+  background: rgba(240, 244, 248, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .navbar-inner {
