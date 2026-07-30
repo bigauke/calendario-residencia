@@ -7,9 +7,35 @@ const SECTIONS = [
   { id: 'classlist', label: 'Aulas' },
 ];
 
-export function createNavbar() {
-  const nav = createElement('nav', { className: 'navbar', id: 'navbar' });
+// ── Theme helpers ──────────────────────────────────────────────
+const STORAGE_KEY = 'tic44-theme';
 
+function isLight() {
+  return document.documentElement.classList.contains('light-mode');
+}
+
+function applyTheme(light) {
+  document.documentElement.classList.toggle('light-mode', light);
+  localStorage.setItem(STORAGE_KEY, light ? 'light' : 'dark');
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved === 'light') {
+    applyTheme(true);
+  } else if (saved === null) {
+    // respect OS preference on first visit
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(!prefersDark);
+  }
+}
+
+// ── Navbar factory ─────────────────────────────────────────────
+export function createNavbar() {
+  // Apply saved/OS theme before rendering
+  initTheme();
+
+  const nav = createElement('nav', { className: 'navbar', id: 'navbar' });
   const inner = createElement('div', { className: 'navbar-inner' });
 
   const brand = createElement('div', {
@@ -29,6 +55,25 @@ export function createNavbar() {
     links.appendChild(li);
   });
 
+  // ── Theme toggle button ──────────────────────────────────────
+  const themeBtn = createElement('button', {
+    className: 'theme-toggle',
+    id: 'theme-toggle',
+    'aria-label': 'Alternar tema claro/escuro',
+    title: 'Alternar tema',
+    innerHTML: isLight() ? '🌙' : '☀️',
+  });
+
+  themeBtn.addEventListener('click', () => {
+    const nowLight = !isLight();
+    applyTheme(nowLight);
+    themeBtn.innerHTML = nowLight ? '🌙' : '☀️';
+    themeBtn.setAttribute('aria-label', nowLight ? 'Mudar para tema escuro' : 'Mudar para tema claro');
+  });
+
+  // ── Actions wrapper (theme btn + hamburger) ──────────────────
+  const actions = createElement('div', { className: 'navbar-actions' });
+
   const toggle = createElement('button', {
     className: 'navbar-mobile-toggle',
     id: 'navbar-toggle',
@@ -36,49 +81,43 @@ export function createNavbar() {
     innerHTML: '<span></span><span></span><span></span>',
   });
 
+  actions.appendChild(themeBtn);
+  actions.appendChild(toggle);
+
   inner.appendChild(brand);
   inner.appendChild(links);
-  inner.appendChild(toggle);
+  inner.appendChild(actions);
   nav.appendChild(inner);
 
-  // Scroll behavior
-  let lastScroll = 0;
+  // ── Scroll behavior ──────────────────────────────────────────
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    nav.classList.toggle('scrolled', scrollY > 50);
-    lastScroll = scrollY;
+    nav.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Mobile toggle
+  // ── Mobile toggle ────────────────────────────────────────────
   toggle.addEventListener('click', () => {
     links.classList.toggle('open');
   });
 
-  // Close mobile menu on link click
   links.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-      links.classList.remove('open');
-    }
+    if (e.target.tagName === 'A') links.classList.remove('open');
   });
 
-  // Scroll spy
-  const observerOptions = {
-    rootMargin: '-20% 0px -70% 0px',
-    threshold: 0,
-  };
+  // ── Scroll spy ───────────────────────────────────────────────
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          links.querySelectorAll('a').forEach((a) => {
+            a.classList.toggle('active', a.dataset.section === id);
+          });
+        }
+      });
+    },
+    { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
+  );
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        links.querySelectorAll('a').forEach((a) => {
-          a.classList.toggle('active', a.dataset.section === id);
-        });
-      }
-    });
-  }, observerOptions);
-
-  // Observe sections after DOM is ready
   requestAnimationFrame(() => {
     SECTIONS.forEach(({ id }) => {
       const section = document.getElementById(id);
@@ -88,3 +127,4 @@ export function createNavbar() {
 
   return nav;
 }
+
