@@ -249,3 +249,62 @@ export function expandAulas(aulas) {
   
   return expanded;
 }
+
+/**
+ * Get all business dates for an aula based on its workload
+ */
+export function getAulaDates(aula) {
+  const dates = [];
+  let daysNeeded = Math.ceil((aula.workload || 6) / 6);
+  let currentDate = new Date(aula.date);
+
+  if (isNaN(currentDate.getTime())) return [aula.date];
+
+  while (daysNeeded > 0) {
+    if (isBusinessDay(currentDate)) {
+      dates.push(new Date(currentDate));
+      daysNeeded--;
+    }
+    if (daysNeeded > 0 || !isBusinessDay(currentDate)) {
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+  }
+
+  return dates;
+}
+
+/**
+ * Format date range for an aula (e.g., "29, 30 e 31 de Julho de 2026 (3 dias)")
+ */
+export function formatAulaDateRange(aula, options = {}) {
+  const dates = getAulaDates(aula);
+  
+  if (dates.length <= 1) {
+    return formatDate(dates[0], { showTime: false, ...options });
+  }
+
+  const firstDate = dates[0];
+  const lastDate = dates[dates.length - 1];
+  const sameMonth = firstDate.getMonth() === lastDate.getMonth() && firstDate.getFullYear() === lastDate.getFullYear();
+  const year = firstDate.getFullYear();
+  const monthName = MONTH_NAMES[firstDate.getMonth()];
+
+  if (sameMonth) {
+    if (dates.length <= 4) {
+      const dayNums = dates.map(d => d.getDate());
+      let daysString = '';
+      if (dayNums.length === 2) {
+        daysString = `${dayNums[0]} e ${dayNums[1]}`;
+      } else {
+        daysString = `${dayNums.slice(0, -1).join(', ')} e ${dayNums[dayNums.length - 1]}`;
+      }
+      return `${daysString} de ${monthName} de ${year} (${dates.length} dias)`;
+    } else {
+      return `${firstDate.getDate()} a ${lastDate.getDate()} de ${monthName} de ${year} (${dates.length} dias)`;
+    }
+  } else {
+    const lastMonthName = MONTH_NAMES[lastDate.getMonth()];
+    return `${firstDate.getDate()} de ${monthName} a ${lastDate.getDate()} de ${lastMonthName} de ${year} (${dates.length} dias)`;
+  }
+}
+

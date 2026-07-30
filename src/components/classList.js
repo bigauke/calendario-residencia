@@ -4,6 +4,7 @@ import {
   getStatus,
   getNextClass,
   formatDate,
+  formatAulaDateRange,
   createElement,
 } from '../utils.js';
 
@@ -153,7 +154,7 @@ export function createClassList() {
       const statusEmoji = status === 'completed' ? '✅' : isNext ? '🔜' : '📅';
       card.appendChild(createElement('div', {
         className: 'class-card-date',
-        innerHTML: `${statusEmoji} ${formatDate(aula.date)}`,
+        innerHTML: `${statusEmoji} ${formatAulaDateRange(aula)}`,
       }));
 
       if (aula.instructor) {

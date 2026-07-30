@@ -4,6 +4,7 @@ import {
   getStatus,
   getNextClass,
   formatDate,
+  formatAulaDateRange,
   createElement,
 } from '../utils.js';
 
@@ -60,7 +61,7 @@ export function createTimeline() {
       }));
       left.appendChild(createElement('span', {
         className: 'timeline-item-date',
-        textContent: formatDate(aula.date),
+        textContent: formatAulaDateRange(aula),
       }));
 
       if (aula.instructor) {
