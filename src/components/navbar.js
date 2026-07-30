@@ -40,7 +40,7 @@ export function createNavbar() {
 
   const brand = createElement('div', {
     className: 'navbar-brand',
-    innerHTML: '📚 Residência <span>TIC 44</span> — CTE-IA',
+    innerHTML: '📚 Residência <span>TIC 44</span><span class="navbar-brand-extra"> — CTE-IA</span>',
   });
 
   const links = createElement('ul', { className: 'navbar-links', id: 'navbar-links' });
@@ -96,11 +96,15 @@ export function createNavbar() {
 
   // ── Mobile toggle ────────────────────────────────────────────
   toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
+    const isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
   });
 
   links.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') links.classList.remove('open');
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+    }
   });
 
   // ── Scroll spy ───────────────────────────────────────────────

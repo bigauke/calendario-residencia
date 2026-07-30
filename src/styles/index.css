@@ -467,12 +467,13 @@ html.light-mode .navbar.scrolled {
 }
 
 .navbar-brand {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  white-space: nowrap;
 }
 
 .navbar-brand span {
@@ -512,55 +513,94 @@ html.light-mode .navbar.scrolled {
   border-radius: var(--radius-full);
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* --- Theme Toggle & Mobile Menu Toggle Buttons --- */
+.theme-toggle,
 .navbar-mobile-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  padding: var(--space-sm);
-}
-
-.navbar-mobile-toggle span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--text-primary);
-  border-radius: 1px;
-  transition: all var(--transition-fast);
-}
-
-/* --- Theme Toggle Button --- */
-.theme-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-full);
   background: var(--bg-tertiary);
   border: 1px solid var(--border-hover);
   color: var(--text-secondary);
   cursor: pointer;
   transition: all var(--transition-normal);
-  font-size: 1rem;
   flex-shrink: 0;
 }
 
-.theme-toggle:hover {
+.theme-toggle {
+  font-size: 1.05rem;
+}
+
+.theme-toggle:hover,
+.navbar-mobile-toggle:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-accent);
   color: var(--accent);
-  transform: rotate(15deg) scale(1.08);
   box-shadow: 0 0 12px var(--accent-glow);
 }
 
-.theme-toggle:active {
-  transform: rotate(20deg) scale(0.95);
+.theme-toggle:active,
+.navbar-mobile-toggle:active {
+  transform: scale(0.95);
 }
 
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+.navbar-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+}
+
+.navbar-mobile-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+}
+
+.navbar-mobile-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.navbar-mobile-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-mobile-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Theme buttons — Tema claro */
+html.light-mode .theme-toggle,
+html.light-mode .navbar-mobile-toggle {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+html.light-mode .theme-toggle:hover,
+html.light-mode .navbar-mobile-toggle:hover {
+  background: #ffffff;
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15);
+}
+
+html.light-mode .navbar-mobile-toggle span {
+  background: var(--text-primary);
 }
 
 /* ========================================
@@ -1407,6 +1447,22 @@ html.light-mode .navbar.scrolled {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar.scrolled {
+    padding: 0.6rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 0.95rem;
+  }
+
+  .navbar-brand-extra {
+    display: none;
+  }
+
   .navbar-links {
     display: none;
   }
@@ -1422,11 +1478,38 @@ html.light-mode .navbar.scrolled {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(6, 8, 15, 0.95);
+    background: rgba(6, 8, 15, 0.96);
     backdrop-filter: blur(20px);
-    padding: var(--space-md) var(--space-xl);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0.85rem 1rem;
     border-bottom: 1px solid var(--border);
-    animation: slideDown 0.3s ease;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    gap: 0.35rem;
+    animation: slideDown 0.25s ease-out;
+  }
+
+  html.light-mode .navbar-links.open {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-links.open a {
+    display: block;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+  }
+
+  .navbar-links.open a:hover,
+  .navbar-links.open a.active {
+    background: var(--accent-glow);
+    color: var(--accent);
+  }
+
+  .navbar-links.open a.active::after {
+    display: none;
   }
 
   .hero-title {
