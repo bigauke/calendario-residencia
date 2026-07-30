@@ -1994,3 +1994,69 @@ html.light-mode .navbar.scrolled {
   }
 }
 
+/* --- Feedback Modal (Light Mode Overrides) --- */
+html.light-mode .feedback-overlay {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+html.light-mode .feedback-modal {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(8, 145, 178, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12),
+              0 0 30px rgba(8, 145, 178, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+html.light-mode .feedback-header-icon {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.12), rgba(139, 92, 246, 0.08));
+  border-color: rgba(8, 145, 178, 0.25);
+  color: var(--accent);
+}
+
+html.light-mode .feedback-close {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: var(--text-tertiary);
+}
+
+html.light-mode .feedback-close:hover {
+  background: rgba(244, 63, 94, 0.1);
+  border-color: rgba(244, 63, 94, 0.3);
+  color: #e11d48;
+}
+
+html.light-mode .feedback-stars {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+html.light-mode .feedback-star {
+  color: rgba(0, 0, 0, 0.18);
+}
+
+html.light-mode .feedback-form input,
+html.light-mode .feedback-form textarea {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+}
+
+html.light-mode .feedback-form input::placeholder,
+html.light-mode .feedback-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+html.light-mode .feedback-form input:hover,
+html.light-mode .feedback-form textarea:hover {
+  border-color: rgba(0, 0, 0, 0.22);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html.light-mode .feedback-form input:focus,
+html.light-mode .feedback-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
+  background: rgba(8, 145, 178, 0.03);
+}
+
+
