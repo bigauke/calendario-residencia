@@ -126,7 +126,7 @@ export const aulas = [
   { number: 45, title: '⭐️ [ATUALIZADO] AWS Quick: O poderoso BI da Amazon', instructor: 'Caroliny Rodrigues Nascimento',
     workload: 6, date: new Date('2026-08-31T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/42-%20AWS%20Quicksight%20-%20O%20poderoso%20BI%20da%20Amazon?csf=1&web=1&e=ggJc7Z' },
   { number: 46, title: '⭐️ [ATUALIZADO] Conhecendo as Práticas de MLOps', instructor: 'Diego Luis Pires',
-    workload: 6, date: new Date('2026-09-01T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/43-%20Conhecendo%20as%20Pr%C3%A1ticas%20de%20MLOps?csf=1&web=1&e=y7JPzC' },
+    workload: 6, date: new Date('2026-09-01T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/45-%20Conhecendo%20as%20Pr%C3%A1ticas%20de%20MLOps?d=wfb1748ba123b4d8b87dfaa39642afcb2&csf=1&web=1&e=oGNwYM' },
   { number: 47, title: '⭐️ [ATUALIZADO] Navegando nas ferramentas da AWS', instructor: 'Lucas De Souza Pereira',
     workload: 18, date: new Date('2026-09-02T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/44-%20Navegando%20nas%20ferramentas%20da%20AWS?csf=1&web=1&e=HKQK60' },
   { number: 48, title: 'Introdução à Cloud: Kubernetes',
