@@ -128,7 +128,7 @@ export const aulas = [
   { number: 46, title: '⭐️ [ATUALIZADO] Conhecendo as Práticas de MLOps', instructor: 'Diego Luis Pires',
     workload: 6, date: new Date('2026-09-01T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/45-%20Conhecendo%20as%20Pr%C3%A1ticas%20de%20MLOps?d=wfb1748ba123b4d8b87dfaa39642afcb2&csf=1&web=1&e=oGNwYM' },
   { number: 47, title: '⭐️ [ATUALIZADO] Navegando nas ferramentas da AWS', instructor: 'Lucas De Souza Pereira',
-    workload: 18, date: new Date('2026-09-02T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/44-%20Navegando%20nas%20ferramentas%20da%20AWS?csf=1&web=1&e=HKQK60' },
+    workload: 18, date: new Date('2026-09-02T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/46-%20Navegando%20nas%20ferramentas%20da%20AWS?d=wdd683372e75d4dc0b28d39e50ea1ba9d&csf=1&web=1&e=6gdVdH' },
   { number: 48, title: 'Introdução à Cloud: Kubernetes',
     workload: 6, date: new Date('2026-09-04T13:00:00Z'), materialUrl: '' },
   { number: 49, title: 'Conhecendo as ferramentas do Google Cloud Platform (GCP)',
