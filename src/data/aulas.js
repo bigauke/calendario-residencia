@@ -29,7 +29,7 @@ export const CATEGORIES = {
 function getCategory(num) {
   if (num <= 8) return CATEGORIES.fundamentos;
   if (num <= 28) return CATEGORIES.ia_ml;
-  if (num <= 52) return CATEGORIES.dados_cloud;
+  if (num < 53) return CATEGORIES.dados_cloud;
   return CATEGORIES.inovacao;
 }
 
@@ -141,6 +141,16 @@ export const aulas = [
     workload: 6, date: new Date('2026-09-10T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/48-%20Conhecendo%20as%20ferramentas%20da%20Azure?csf=1&web=1&e=G51Z4R' },
   { number: 52, title: '⭐️ [ATUALIZADO] Escrita de Artigos Científicos e Metodologia Científica', instructor: 'Heigon Alafaire Soldera Pires',
     workload: 6, date: new Date('2026-09-11T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/49-%20Escrita%20de%20Artigos%20Cient%C3%ADficos%20e%20Metodologia%20Cient%C3%ADfica?csf=1&web=1&e=5CZ2xe' },
+  { number: 52.1, title: '⭐️ [ATUALIZADO] Escrita de Artigos Científicos e Metodologia Científica', instructor: 'Heigon Alafaire Soldera Pires',
+    workload: 6, date: new Date('2026-09-14T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/49-%20Escrita%20de%20Artigos%20Cient%C3%ADficos%20e%20Metodologia%20Cient%C3%ADfica?csf=1&web=1&e=5CZ2xe' },
+  { number: 52.2, title: '⭐️ [ATUALIZADO] Escrita de Artigos Científicos e Metodologia Científica', instructor: 'Heigon Alafaire Soldera Pires',
+    workload: 6, date: new Date('2026-09-15T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/49-%20Escrita%20de%20Artigos%20Cient%C3%ADficos%20e%20Metodologia%20Cient%C3%ADfica?csf=1&web=1&e=5CZ2xe' },
+  { number: 52.3, title: '⭐️ [ATUALIZADO] Escrita de Artigos Científicos e Metodologia Científica', instructor: 'Heigon Alafaire Soldera Pires',
+    workload: 6, date: new Date('2026-09-16T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/49-%20Escrita%20de%20Artigos%20Cient%C3%ADficos%20e%20Metodologia%20Cient%C3%ADfica?csf=1&web=1&e=5CZ2xe' },
+  { number: 52.4, title: '⭐️ [ATUALIZADO] Escrita de Artigos Científicos e Metodologia Científica', instructor: 'Heigon Alafaire Soldera Pires',
+    workload: 6, date: new Date('2026-09-17T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/49-%20Escrita%20de%20Artigos%20Cient%C3%ADficos%20e%20Metodologia%20Cient%C3%ADfica?csf=1&web=1&e=5CZ2xe' },
+  { number: 52.5, title: '⭐️ [ATUALIZADO] Escrita de Artigos Científicos e Metodologia Científica', instructor: 'Heigon Alafaire Soldera Pires',
+    workload: 6, date: new Date('2026-09-18T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/49-%20Escrita%20de%20Artigos%20Cient%C3%ADficos%20e%20Metodologia%20Cient%C3%ADfica?csf=1&web=1&e=5CZ2xe' },
   { number: 53, title: 'Comportamento de Empreendedorismo',
     workload: 10, date: new Date('2026-09-21T13:00:00Z'), materialUrl: 'https://sidiorgbr.sharepoint.com/:f:/r/sites/PPISOFTEX-RESIDNCIATIC/Shared%20Documents/General/50-%20Comportamento%20de%20Empreendedorismo?csf=1&web=1&e=0IshjD' },
   { number: 54, title: 'Inovação e Mercado',
